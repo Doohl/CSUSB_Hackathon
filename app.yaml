@@ -1,0 +1,17 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /
+  script: main.app
+
+libraries:
+- name: MySQLdb
+  version: "latest"
+
+# [START gae_python_mysql_env]
+env_variables:
+    CLOUDSQL_CONNECTION_NAME: csusb-hackathon:us-west2:crime-database
+    CLOUDSQL_USER: root
+# [END gae_python_mysql_env]
